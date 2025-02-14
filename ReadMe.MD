@@ -3,11 +3,11 @@
 <br>
 <div align="center">Wim Pouw (wim.pouw@donders.ru.nl), Bosco Yung, Sharjeel Shaikh, James Trujillo, Gerard de Melo, Babajide Owoyele (Babajide.Owoyele@hpi.de) </div>
 
-<img src="Images/envision_banner.png" alt="isolated" width="300"/>
+<img src="images/envision_banner.png" alt="isolated" width="300"/>
 
-<img src="Images/ex.gif"  width="300"/>
+<img src="images/ex.gif"  width="300"/>
 
-<img src="Images/dashboard.gif" alt="isolated" width="300"/>
+<img src="images/dashboard.gif" alt="isolated" width="300"/>
 
 ## Info
 In the following notebook, we are going to use an envisionbox python package. This package is called "envisionhgdetector" and contains functions to automatically annotate gesture, to perform kinematic analysis, and to produce a visualization dashboard. In some other envisionbox module on training a gesture classifier we exhibited an [end-to-end pipeline](https://github.com/WimPouw/envisionBOX_modulesWP/tree/main/UsingEnvisionHGdetector_package) for training a model on particular human behaviors, e.g., head nodding, clapping; and then producing some inferences on new videos.  We also already presented how to do DTW analyses for exploring gesture similarity embedding spaces [embedding spaces](https://envisionbox.org/embedded_Gesture_kinematic_spaces.html), and we have an introduced [dashboards](https://envisionbox.org/embedded_dynamicvisualizer.html) for visualizing gestures alongside static data. This package builds on this work.
