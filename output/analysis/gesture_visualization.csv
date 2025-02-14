@@ -1,0 +1,11 @@
+x,y,gesture
+5.1283813,-1.8695086,test_female.mp4_segment_1_Gesture_0.13_1.47
+5.1385174,-1.2089446,test_female.mp4_segment_2_Gesture_2.14_3.00
+6.4248514,1.0444294,test_female.mp4_segment_3_Gesture_4.94_6.67
+5.8155546,0.5103479,test_female.mp4_segment_4_Gesture_7.07_7.97
+6.5536,0.21908224,test_female.mp4_segment_5_Gesture_8.44_10.31
+4.3874855,0.88746923,test_male.mp4_segment_1_Gesture_0.00_3.77
+6.0330276,-1.3190143,test_male.mp4_segment_2_Gesture_4.50_5.44
+4.5570316,0.17752293,test_male.mp4_segment_3_Gesture_7.54_9.61
+5.4206758,-0.5111307,test_male.mp4_segment_4_Gesture_11.24_12.05
+4.3819585,-0.8926194,test_male.mp4_segment_5_Gesture_12.48_12.95

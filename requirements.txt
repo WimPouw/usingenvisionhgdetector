@@ -1,0 +1,4 @@
+moviepy==2.1.1
+envisionhgdetector
+jupyter
+ipython
