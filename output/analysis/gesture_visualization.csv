@@ -1,9 +1,9 @@
 x,y,gesture
-10.482724,14.676346,test_female.mp4_segment_1_Gesture_0.53_1.37
-11.369168,14.573923,test_female.mp4_segment_2_Gesture_2.17_2.97
-12.6494,14.519915,test_female.mp4_segment_3_Gesture_5.44_6.61
-11.629092,13.714719,test_female.mp4_segment_4_Gesture_7.31_7.84
-12.855203,13.729096,test_female.mp4_segment_5_Gesture_8.74_9.08
-12.353814,13.22101,test_female.mp4_segment_6_Gesture_9.48_10.18
-11.589822,15.598662,test_male.mp4_segment_1_Gesture_0.10_3.67
-10.651258,15.557358,test_male.mp4_segment_2_Gesture_7.51_9.78
+-3.7867224,-1.5632496,test_female.mp4_segment_1_Gesture_0.53_1.37
+-3.6171224,-2.3678708,test_female.mp4_segment_2_Gesture_2.17_2.97
+-2.8296635,-3.2659414,test_female.mp4_segment_3_Gesture_5.44_6.61
+-2.776469,-2.4429803,test_female.mp4_segment_4_Gesture_7.31_7.84
+-2.7857113,-4.0122595,test_female.mp4_segment_5_Gesture_8.74_9.08
+-3.6230192,-3.725013,test_female.mp4_segment_6_Gesture_9.48_10.18
+-4.5573926,-2.9499438,test_male.mp4_segment_1_Gesture_0.10_3.67
+-4.5901227,-2.0461729,test_male.mp4_segment_2_Gesture_7.51_9.78
