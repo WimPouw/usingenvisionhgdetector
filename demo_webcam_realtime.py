@@ -38,8 +38,8 @@ def get_parameters():
     # Get min length (applied post-hoc)
     while True:
         try:
-            length_input = input("Min gesture length in seconds (default 0.2): ").strip()
-            min_length_s = float(length_input) if length_input else 0.2
+            length_input = input("Min gesture length in seconds (default 0.3): ").strip()  # Changed default from 0.2 to 0.3
+            min_length_s = float(length_input) if length_input else 0.3
             if min_length_s >= 0.0:
                 break
             else:
@@ -49,8 +49,8 @@ def get_parameters():
     
     print(f"\nConfiguration:")
     print(f"  Confidence threshold: {confidence_threshold:.2f} (applied during detection)")
-    print(f"  Min gap: {min_gap_s:.1f}s (applied post-hoc)")
-    print(f"  Min length: {min_length_s:.1f}s (applied post-hoc)")
+    print(f"  Min gap: {min_gap_s:.2f}s (applied post-hoc)")
+    print(f"  Min length: {min_length_s:.2f}s (applied post-hoc)")
     
     return confidence_threshold, min_gap_s, min_length_s
 
@@ -72,6 +72,13 @@ def run_webcam_demo():
             min_length_s=min_length_s
         )
         print("\nLightGBM detector initialized successfully!")
+        
+        # Verify parameters were set correctly
+        print(f"Detector parameters:")
+        print(f"  Confidence threshold: {detector.confidence_threshold:.2f}")
+        print(f"  Min gap: {detector.min_gap_s:.2f}s")
+        print(f"  Min length: {detector.min_length_s:.2f}s")
+        
         print(f"Model features: {detector.model.expected_features}")
         print(f"Gesture labels: {detector.model.gesture_labels}")
         print(f"Advanced features: {'ENABLED' if detector.model.includes_fingers else 'DISABLED'}")
@@ -115,11 +122,14 @@ def run_webcam_demo():
                 total_gesture_time = segments['duration'].sum()
                 avg_segment_duration = segments['duration'].mean()
                 
-                print(f"\nProcessed Segments (after applying gap={min_gap_s:.1f}s, minlen={min_length_s:.1f}s):")
+                print(f"\nProcessed Segments (after applying gap={min_gap_s:.2f}s, minlen={min_length_s:.2f}s):")
                 print(f"Total segments: {total_segments}")
                 print(f"Total gesture time: {total_gesture_time:.1f}s")
                 print(f"Average segment duration: {avg_segment_duration:.1f}s")
-                print(f"Gestures per minute: {total_segments / (raw_results['timestamp'].max() / 60):.1f}")
+                
+                if 'wall_clock_time' in raw_results.columns:
+                    total_time = raw_results['wall_clock_time'].max()
+                    print(f"Gestures per minute: {total_segments / (total_time / 60):.1f}")
                 
                 # Show segment details
                 print(f"\nSegment Details:")
@@ -127,8 +137,11 @@ def run_webcam_demo():
                     print(f"  {idx+1}: {seg['label']} ({seg['start_time']:.1f}s - {seg['end_time']:.1f}s, {seg['duration']:.1f}s)")
             else:
                 print(f"\nNo gesture segments found after post-processing")
-                print(f"(Applied filters: gap={min_gap_s:.1f}s, minlen={min_length_s:.1f}s)")
-                print("Try using smaller values for gap and minimum length.")
+                print(f"(Applied filters: gap={min_gap_s:.2f}s, minlen={min_length_s:.2f}s)")
+                print("Suggestions:")
+                print("- Try using smaller values for gap and minimum length")
+                print("- Check if gestures are being detected consistently")
+                print("- Verify confidence threshold isn't too high")
                 
             # Show output files
             print(f"\nFiles saved in output_realtime/ folder:")
@@ -147,6 +160,8 @@ def run_webcam_demo():
         return None, None
     except Exception as e:
         print(f"\nError during webcam processing: {e}")
+        import traceback
+        traceback.print_exc()
         return None, None
 
 def run_default_demo():
@@ -158,9 +173,12 @@ def run_default_demo():
         detector = RealtimeGestureDetector(
             confidence_threshold=0.2,
             min_gap_s=0.2,
-            min_length_s=0.2
+            min_length_s=0.3
         )
-        print("Using default parameters: confidence=0.2, gap=0.2s, minlen=0.2s")
+        print("Using default parameters:")
+        print(f"  Confidence: {detector.confidence_threshold:.2f}")
+        print(f"  Gap: {detector.min_gap_s:.2f}s") 
+        print(f"  Min length: {detector.min_length_s:.2f}s")
         print("LightGBM detector initialized successfully!")
         
         print("\nStarting webcam demo...")
@@ -180,6 +198,8 @@ def run_default_demo():
         
     except Exception as e:
         print(f"Error: {e}")
+        import traceback
+        traceback.print_exc()
         return None, None
 
 def quick_test():
