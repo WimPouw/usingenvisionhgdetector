@@ -1,4 +1,4 @@
 moviepy==2.1.1
-envisionhgdetector
+envisionhgdetector==2.0.0.0
 jupyter
 ipython

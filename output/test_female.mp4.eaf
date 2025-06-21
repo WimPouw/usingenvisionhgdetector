@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2025-02-24-14-17-52" FORMAT="3.0" VERSION="3.0"
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2025-06-21-10-55-05" FORMAT="3.0" VERSION="3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
         <MEDIA_DESCRIPTOR MEDIA_URL="file://d:\Research_projects\usingenvisionhgdetector\videos_to_label\test_female.mp4"
@@ -7,18 +7,14 @@
         <PROPERTY NAME="lastUsedAnnotationId">0</PROPERTY>
     </HEADER>
     <TIME_ORDER>
-        <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="533"/>
-        <TIME_SLOT TIME_SLOT_ID="ts2" TIME_VALUE="1368"/>
-        <TIME_SLOT TIME_SLOT_ID="ts3" TIME_VALUE="2168"/>
-        <TIME_SLOT TIME_SLOT_ID="ts4" TIME_VALUE="2969"/>
-        <TIME_SLOT TIME_SLOT_ID="ts5" TIME_VALUE="5438"/>
-        <TIME_SLOT TIME_SLOT_ID="ts6" TIME_VALUE="6606"/>
-        <TIME_SLOT TIME_SLOT_ID="ts7" TIME_VALUE="7307"/>
-        <TIME_SLOT TIME_SLOT_ID="ts8" TIME_VALUE="7841"/>
-        <TIME_SLOT TIME_SLOT_ID="ts9" TIME_VALUE="8742"/>
-        <TIME_SLOT TIME_SLOT_ID="ts10" TIME_VALUE="9075"/>
-        <TIME_SLOT TIME_SLOT_ID="ts11" TIME_VALUE="9476"/>
-        <TIME_SLOT TIME_SLOT_ID="ts12" TIME_VALUE="10176"/>
+        <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="500"/>
+        <TIME_SLOT TIME_SLOT_ID="ts2" TIME_VALUE="1067"/>
+        <TIME_SLOT TIME_SLOT_ID="ts3" TIME_VALUE="2369"/>
+        <TIME_SLOT TIME_SLOT_ID="ts4" TIME_VALUE="3236"/>
+        <TIME_SLOT TIME_SLOT_ID="ts5" TIME_VALUE="4871"/>
+        <TIME_SLOT TIME_SLOT_ID="ts6" TIME_VALUE="6539"/>
+        <TIME_SLOT TIME_SLOT_ID="ts7" TIME_VALUE="8007"/>
+        <TIME_SLOT TIME_SLOT_ID="ts8" TIME_VALUE="11177"/>
     </TIME_ORDER>
     <TIER DEFAULT_LOCALE="en" LINGUISTIC_TYPE_REF="default" TIER_ID="PREDICTED">
         <ANNOTATION>
@@ -38,16 +34,6 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a4" TIME_SLOT_REF1="ts7" TIME_SLOT_REF2="ts8">
-                <ANNOTATION_VALUE>Gesture</ANNOTATION_VALUE>
-            </ALIGNABLE_ANNOTATION>
-        </ANNOTATION>
-        <ANNOTATION>
-            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a5" TIME_SLOT_REF1="ts9" TIME_SLOT_REF2="ts10">
-                <ANNOTATION_VALUE>Gesture</ANNOTATION_VALUE>
-            </ALIGNABLE_ANNOTATION>
-        </ANNOTATION>
-        <ANNOTATION>
-            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a6" TIME_SLOT_REF1="ts11" TIME_SLOT_REF2="ts12">
                 <ANNOTATION_VALUE>Gesture</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
