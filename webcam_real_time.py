@@ -14,9 +14,9 @@ def run_webcam_demo():
     # Initialize detector with refinement parameters
     try:
         detector = RealtimeGestureDetector(
-            confidence_threshold=0.2,
-            min_gap_s=0.3,          # Minimum gap between gesture segments
-            min_length_s=0.5        # Minimum gesture duration
+            confidence_threshold=0.7,
+            min_gap_s=0.2,          # Minimum gap between gesture segments
+            min_length_s=0.1        # Minimum gesture duration
         )
         print("LightGBM detector initialized successfully!")
         print(f"Model features: {detector.model.expected_features}")
@@ -32,10 +32,6 @@ def run_webcam_demo():
     print("  - SPACE: Show current status")
     print("  - +/=: Increase confidence threshold")
     print("  - -: Decrease confidence threshold")
-    print("  - G: Increase min gap between gestures")
-    print("  - F: Decrease min gap between gestures")
-    print("  - L: Increase min gesture length")
-    print("  - K: Decrease min gesture length")
     print("\nPosition yourself in front of the camera and start gesturing!")
     print("   (The system will start detecting after a few frames to build a buffer)\n")
     
