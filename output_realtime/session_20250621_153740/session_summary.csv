@@ -1,0 +1,2 @@
+timestamp,total_frames,duration_seconds,wall_clock_duration_seconds,average_fps,confidence_threshold,min_gap_s,min_length_s,model_type,advanced_features,raw_gesture_frames,raw_gesture_percentage,processed_segments,total_gesture_time,average_segment_duration,gestures_per_minute
+2025-06-21 15:38:44,552,27.55,26.40239119529724,20.036297640653356,0.7,0.1,0.2,LightGBM,True,279,50.54347826086957,6,2.549999999999999,0.4249999999999998,13.635128626687521

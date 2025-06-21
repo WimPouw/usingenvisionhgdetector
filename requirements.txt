@@ -2,3 +2,4 @@ moviepy==2.1.1
 envisionhgdetector==2.0.0.1
 jupyter
 ipython
+ipykernel
