@@ -1,24 +1,77 @@
-# Create the enhanced webcam demo script
+# Enhanced webcam demo script with parameter input
 from envisionhgdetector import RealtimeGestureDetector
 import pandas as pd
 import os
 from datetime import datetime
 
+def get_parameters():
+    """Get detection and post-processing parameters from user."""
+    print("Detector Configuration")
+    print("-" * 30)
+    print("Configure detection and post-processing parameters:")
+    print()
+    
+    # Get confidence threshold (applied during detection)
+    while True:
+        try:
+            conf_input = input("Confidence threshold (0.0-1.0, default 0.2): ").strip()
+            confidence_threshold = float(conf_input) if conf_input else 0.2
+            if 0.0 <= confidence_threshold <= 1.0:
+                break
+            else:
+                print("Please enter a value between 0.0 and 1.0")
+        except ValueError:
+            print("Please enter a valid number")
+    
+    # Get min gap (applied post-hoc)
+    while True:
+        try:
+            gap_input = input("Min gap between gestures in seconds (default 0.2): ").strip()
+            min_gap_s = float(gap_input) if gap_input else 0.2
+            if min_gap_s >= 0.0:
+                break
+            else:
+                print("Please enter a positive number")
+        except ValueError:
+            print("Please enter a valid number")
+    
+    # Get min length (applied post-hoc)
+    while True:
+        try:
+            length_input = input("Min gesture length in seconds (default 0.2): ").strip()
+            min_length_s = float(length_input) if length_input else 0.2
+            if min_length_s >= 0.0:
+                break
+            else:
+                print("Please enter a positive number")
+        except ValueError:
+            print("Please enter a valid number")
+    
+    print(f"\nConfiguration:")
+    print(f"  Confidence threshold: {confidence_threshold:.2f} (applied during detection)")
+    print(f"  Min gap: {min_gap_s:.1f}s (applied post-hoc)")
+    print(f"  Min length: {min_length_s:.1f}s (applied post-hoc)")
+    
+    return confidence_threshold, min_gap_s, min_length_s
+
 def run_webcam_demo():
     """
-    Enhanced webcam demo with post-processing and organized output.
+    Enhanced webcam demo with user-configurable parameters.
     """
     print("LightGBM Real-time Gesture Detection Demo")
     print("=" * 50)
     
-    # Initialize detector with refinement parameters
+    # Get parameters from user
+    confidence_threshold, min_gap_s, min_length_s = get_parameters()
+    
+    # Initialize detector with user parameters
     try:
         detector = RealtimeGestureDetector(
-            confidence_threshold=0.7,
-            min_gap_s=0.2,          # Minimum gap between gesture segments
-            min_length_s=0.1        # Minimum gesture duration
+            confidence_threshold=confidence_threshold,
+            min_gap_s=min_gap_s,
+            min_length_s=min_length_s
         )
-        print("LightGBM detector initialized successfully!")
+        print("\nLightGBM detector initialized successfully!")
         print(f"Model features: {detector.model.expected_features}")
         print(f"Gesture labels: {detector.model.gesture_labels}")
         print(f"Advanced features: {'ENABLED' if detector.model.includes_fingers else 'DISABLED'}")
@@ -26,17 +79,15 @@ def run_webcam_demo():
         print(f"Error initializing detector: {e}")
         return None
     
-    print("\nStarting enhanced webcam demo...")
+    print("\nStarting webcam demo...")
     print("Controls:")
     print("  - Q: Quit session")
     print("  - SPACE: Show current status")
-    print("  - +/=: Increase confidence threshold")
-    print("  - -: Decrease confidence threshold")
     print("\nPosition yourself in front of the camera and start gesturing!")
     print("   (The system will start detecting after a few frames to build a buffer)\n")
     
     try:
-        # Run enhanced webcam processing with post-processing
+        # Run webcam processing with post-processing
         raw_results, segments = detector.process_webcam(
             duration=None,               # Unlimited duration (use Q to quit)
             camera_index=0,              # Default camera
@@ -64,7 +115,7 @@ def run_webcam_demo():
                 total_gesture_time = segments['duration'].sum()
                 avg_segment_duration = segments['duration'].mean()
                 
-                print(f"\nProcessed Segments:")
+                print(f"\nProcessed Segments (after applying gap={min_gap_s:.1f}s, minlen={min_length_s:.1f}s):")
                 print(f"Total segments: {total_segments}")
                 print(f"Total gesture time: {total_gesture_time:.1f}s")
                 print(f"Average segment duration: {avg_segment_duration:.1f}s")
@@ -75,14 +126,17 @@ def run_webcam_demo():
                 for idx, seg in segments.iterrows():
                     print(f"  {idx+1}: {seg['label']} ({seg['start_time']:.1f}s - {seg['end_time']:.1f}s, {seg['duration']:.1f}s)")
             else:
-                print("\nNo gesture segments found after post-processing")
+                print(f"\nNo gesture segments found after post-processing")
+                print(f"(Applied filters: gap={min_gap_s:.1f}s, minlen={min_length_s:.1f}s)")
+                print("Try using smaller values for gap and minimum length.")
                 
             # Show output files
             print(f"\nFiles saved in output_realtime/ folder:")
-            print(f"- Raw frame results CSV")
-            print(f"- Processed segments CSV")
-            print(f"- Webcam session video")
-            print(f"- Session summary JSON")
+            print(f"- raw_frame_results.csv (frame-by-frame predictions)")
+            print(f"- gesture_segments.csv (refined gesture segments)")
+            print(f"- gesture_segments.eaf (ELAN annotation file)")
+            print(f"- webcam_session.mp4 (annotated video)")
+            print(f"- session_summary.json (session parameters & statistics)")
         else:
             print("No data recorded (session may have been too short)")
         
@@ -93,6 +147,39 @@ def run_webcam_demo():
         return None, None
     except Exception as e:
         print(f"\nError during webcam processing: {e}")
+        return None, None
+
+def run_default_demo():
+    """Run demo with default parameters (no user input)."""
+    print("LightGBM Real-time Gesture Detection Demo (Default Parameters)")
+    print("=" * 60)
+    
+    try:
+        detector = RealtimeGestureDetector(
+            confidence_threshold=0.2,
+            min_gap_s=0.2,
+            min_length_s=0.2
+        )
+        print("Using default parameters: confidence=0.2, gap=0.2s, minlen=0.2s")
+        print("LightGBM detector initialized successfully!")
+        
+        print("\nStarting webcam demo...")
+        print("Controls: Q=quit, SPACE=status")
+        print("Position yourself in front of the camera and start gesturing!\n")
+        
+        raw_results, segments = detector.process_webcam()
+        
+        if not raw_results.empty:
+            gesture_frames = len(raw_results[raw_results['gesture'] != 'NoGesture'])
+            gesture_percentage = (gesture_frames/len(raw_results)*100)
+            print(f"\nSession complete: {gesture_frames} gesture frames ({gesture_percentage:.1f}%)")
+            if not segments.empty:
+                print(f"Processed segments: {len(segments)}")
+        
+        return raw_results, segments
+        
+    except Exception as e:
+        print(f"Error: {e}")
         return None, None
 
 def quick_test():
@@ -137,6 +224,11 @@ def analyze_previous_session():
             if not segments_df.empty:
                 print(f"Processed segments: {len(segments_df)}")
                 print(f"Total gesture time: {segments_df['duration'].sum():.1f}s")
+                print(f"Average segment duration: {segments_df['duration'].mean():.1f}s")
+                
+                # Show files available
+                session_files = os.listdir(latest_session)
+                print(f"Available files: {session_files}")
         
         return raw_df, segments_df
         
@@ -153,16 +245,22 @@ if __name__ == "__main__":
             quick_test()
         elif sys.argv[1] == "analyze":
             analyze_previous_session()
+        elif sys.argv[1] == "default":
+            if quick_test():
+                print("\n" + "="*50)
+                input("Press Enter to start default webcam demo (or Ctrl+C to cancel)...")
+                run_default_demo()
         else:
             print("Usage:")
-            print("  python webcam_demo.py        # Run webcam demo")
-            print("  python webcam_demo.py test   # Test installation")
+            print("  python webcam_demo.py         # Run webcam demo with parameter input")
+            print("  python webcam_demo.py test    # Test installation")
+            print("  python webcam_demo.py default # Run with default parameters (no input)")
             print("  python webcam_demo.py analyze # Analyze previous session")
     else:
-        # Run the full webcam demo
+        # Run the full webcam demo with parameter input
         if quick_test():
             print("\n" + "="*50)
-            input("Press Enter to start webcam demo (or Ctrl+C to cancel)...")
+            input("Press Enter to configure and start webcam demo (or Ctrl+C to cancel)...")
             raw_results, segments = run_webcam_demo()
         else:
             print("\nPlease fix installation issues before running webcam demo")
