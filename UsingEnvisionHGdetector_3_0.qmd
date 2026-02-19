@@ -224,14 +224,15 @@ Version 3.0 uses a **combined model architecture** with two complementary classi
 - **Input**: 25 frames (1 second at 25 FPS)
 - **Architecture**: Residual blocks with skip connections
 - **Output**: 3-class (None, Move, Gesture)
-- **Motion Gate**: Pre-filters frames with insufficient movement
+- **Advantage**: Better at filtering self-adaptors
 
 ### LightGBM Model (Gradient Boosting)
 
 - **Input**: 5 frames (0.2 seconds)
 - **Features**: 92 engineered features per window
 - **Output**: 2-class (No Gesture, Gesture)
-- **Advantage**: Better at filtering self-adaptors
+- **Advantage**: Fast and simple
+
 
 ::: {.callout-note collapse="true"}
 ## Feature Details LightGBM
