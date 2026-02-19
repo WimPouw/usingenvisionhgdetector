@@ -79,7 +79,7 @@ This tutorial covers **envisionhgdetector version 3.0**, featuring a new combine
 
 ### Prerequisites
 
-- **Anaconda** (recommended, NOT Miniconda)
+- **Anaconda** (recommended, NOT Miniconda) [see getting started](https://envisionbox.org/gettingstarted.html)
 - Python 3.10
 - C++ redistributables (Windows only)
 
