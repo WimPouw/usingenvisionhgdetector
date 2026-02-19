@@ -164,10 +164,6 @@ from envisionhgdetector import GestureDetector
 print("Installation successful!")
 ```
 
-::: {.callout-tip}
-**GPU Support**: For faster processing, ensure CUDA is properly configured for your system.
-:::
-
 :::
 
 ---
