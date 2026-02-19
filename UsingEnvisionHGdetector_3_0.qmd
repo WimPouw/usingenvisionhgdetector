@@ -31,13 +31,15 @@ format:
 engine: knitr
 ---
 
-::: {.video-widget}
-<iframe 
-    src="https://envisionbox.org/videotutorials/tutorial_usingenvisionhgdetector_19022026.mp4"
-    frameborder="0"
-    allowfullscreen>
-</iframe>
-:::
+```{=html}
+<div class="video-widget">
+<video controls width="100%" style="display:block; height:auto;">
+  <source src="https://envisionbox.org/videotutorials/tutorial_usingenvisionhgdetector_19022026.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+```
+
 ![](images/envisionboxlogo20.png){fig-align="center" width=150}
 
 # Info
