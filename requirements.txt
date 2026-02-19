@@ -1,5 +1,5 @@
 moviepy==2.1.1
-envisionhgdetector==2.0.0.1
+envisionhgdetector==3.0.0.0
 jupyter
 ipython
 ipykernel
