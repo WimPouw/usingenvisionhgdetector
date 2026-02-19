@@ -52,8 +52,29 @@ body {
     position: static;
     width: 100%;
     margin-bottom: 1.5rem;
+    overflow: visible;
   }
   body {
     padding-right: unset !important;
   }
+}
+
+.video-widget video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* re-add since overflow:visible no longer clips it */
+}
+
+/* Allow fullscreen to break out of the widget */
+.video-widget video:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.video-widget video:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
 }
