@@ -33,12 +33,11 @@ engine: knitr
 
 ::: {.video-widget}
 <iframe 
-  src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-  frameborder="0"
-  allowfullscreen>
+    src="https://envisionbox.org/videotutorials/tutorial_usingenvisionhgdetector_19022026.mp4"
+    frameborder="0"
+    allowfullscreen>
 </iframe>
 :::
-
 ![](images/envisionboxlogo20.png){fig-align="center" width=150}
 
 # Info
