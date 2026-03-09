@@ -732,8 +732,9 @@ Model Types
 <span id="cb14-12"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-13"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-render for Jupyter display</span></span>
 <span id="cb14-14"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-14" aria-hidden="true" tabindex="-1"></a>clip <span class="op">=</span> VideoFileClip(videoslabeled[<span class="dv">0</span>])</span>
-<span id="cb14-15"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-15" aria-hidden="true" tabindex="-1"></a>clip.write_videofile(<span class="st">"./temp/example_labeled.mp4"</span>)</span>
-<span id="cb14-16"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-16" aria-hidden="true" tabindex="-1"></a>Video(<span class="st">"./temp/example_labeled.mp4"</span>, embed<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-15"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-15" aria-hidden="true" tabindex="-1"></a>video_save_path = <span class="st">"./example.mp4"</span></span>
+<span id="cb14-16"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-16" aria-hidden="true" tabindex="-1"></a>clip.write_videofile(<span class="st">video_save_path</span>)</span>
+<span id="cb14-17"><a href="file:///D:/Research_projects/usingenvisionhgdetector/UsingEnvisionHGdetector_3_0.html#cb14-17" aria-hidden="true" tabindex="-1"></a>Video(<span class="st">video_save_path</span>, embed<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-3-cut-video-segments" class="level2" data-number="4.4">
