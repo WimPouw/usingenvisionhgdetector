@@ -375,7 +375,7 @@ detector.process_folder(
 ```
 
 ::: {.callout-note collapse="true"}
-## 📂 Output Files Generated
+## Output Files Generated
 
 After processing, check your output folder:
 
@@ -481,7 +481,7 @@ if "error" not in tracking_results:
 ```
 
 ::: {.callout-note collapse="true"}
-## 📊 Kinematic Features Extracted
+## Kinematic Features Extracted
 
 The kinematic analysis extracts comprehensive features for the most active hand in each gesture:
 
