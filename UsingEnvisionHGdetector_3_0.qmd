@@ -9,7 +9,6 @@ author:
   - name: Sharjeel Shaikh
   - name: Bosco Yung
   - name: James Trujillo
-  - name: Fabian Eckert
   - name: Antonio Rueda-Toicen
   - name: Gerard de Melo
   - name: Babajide Owoyele
@@ -590,10 +589,14 @@ Then open your browser to the displayed address (typically `http://127.0.0.1:805
 
 If you use this package, please use this latest citation (we are working on an update for 3.0):
 
-> Pouw, W., Yung, B., Shaikh, S., Trujillo, J., Rueda-Toicen, A., de Melo, G., & Owoyele, B. (2024). envisionhgdetector: Hand Gesture Detection Using Deep Learning (Version 1.0) [Computer software]. https://pypi.org/project/envisionhgdetector/
+> Pouw, W., Shaikh, S., Trujillo, J., Yung, B., Rueda-Toicen, A., de Melo, G., & Owoyele, B. (2026). EnvisionHGdetector: A Computational Framework for Co-speech Gesture Detection, Kinematic Analysis, and Interactive Visualization (Version 3.0.1). https://pypi.org/project/envisionhgdetector/
+
+The paper describing the package is currently in press, to be included into a diamond open access book, and can be cited as:
+
+Pouw, W., Ahmed-Shaikh, S., Trujillo, J., Yung, B., Rueda-Toicen, A., de Melo, G., & Owoyele, B. (2026). EnvisionHGdetector: A Computational Framework for Co-speech Gesture Detection, Kinematic Analysis, and Interactive Visualization. In A. Lücking & A. Mehler (Eds.), Bahavioromics: Semantic, experimental, and computational multimodal interaction studies. Logod Verlag, Berlin. [Link to postprint](https://www.wimpouw.com/files/gh_detectorPREPRINT.pdf)
 
 ::: {.callout-note collapse="true"}
-## 📚 Additional Citations
+## Additional Citations
 
 **Original Training Framework:**
 
@@ -601,28 +604,27 @@ If you use this package, please use this latest citation (we are working on an u
 
 **Training Datasets:**
 
-- Lücking et al. (2010). The Bielefeld Speech and Gesture Alignment Corpus (SaGA). *LREC 2010*.
-- Gu et al. (2025). The ECOLANG Multimodal Corpus. *Scientific Data*.
-- Koutsombogera & Vogel (2017). The MULTISIMO Multimodal Corpus. *ICMI*.
-- Bao et al. (2024). Editable Co-Speech Gesture Synthesis. *Electronics*.
-- Rohrer, P. (2022). TED M3D Labeling System. *Dissertation*.
-- Hensel, et al. (2025). A richly annotated dataset of co-speech hand gestures across diverse speaker contexts. *Scientific Data*.
+- Lücking, A., Bergmann, K., Hahn, F., Kopp, S., & Rieser, H. (2010). The Bielefeld speech and gesture alignment corpus (SaGA). In LREC 2010 workshop: Multimodal corpora–advances in capturing, coding and analyzing multimodality.
+- Gu, Y., Donnellan, E., Grzyb, B., Brekelmans, G., Murgiano, M., Brieke, R., ... & Vigliocco, G. (2025). The ECOLANG Multimodal Corpus of adult-child and adult-adult Language. Scientific Data, 12(1), 89.
+- Koutsombogera, M., & Vogel, C. (2017, November). The MULTISIMO multimodal corpus of collaborative interactions. In Proceedings of the 19th ACM International Conference on Multimodal Interaction (pp. 502-503).
+- Bao, Y., Weng, D., & Gao, N. (2024). Editable Co-Speech Gesture Synthesis Enhanced with Individual Representative Gestures. Electronics, 13(16), 3315.
+- Rohrer, P. (2022). A temporal and pragmatic analysis of gesture-speech association: A corpus-based approach using the novel MultiModal MultiDimensional (M3D) labeling system (Doctoral dissertation, Nantes Université; Universitat Pompeu Fabra (Barcelone, Espagne)).
+- Hensel, L. B., Cheng, S., & Marsella, S. (2025). A richly annotated dataset of co-speech hand gestures across diverse speaker contexts. Scientific Data, 12(1), 1748.
 
 **Methods:**
 
-- Lugaresi et al. (2019). MediaPipe: A Framework for Perception Pipelines. *arXiv*.
-- Trujillo et al. (2019). Markerless Analysis of Kinematic Features. *Behavior Research Methods*.
-- Pouw & Dixon (2020). Gesture Networks with DTW. *Discourse Processes*.
+- Lugaresi, C., Tang, J., Nash, H., McClanahan, C., Uboweja, E., Hays, M., ... & Grundmann, M. (2019). Mediapipe: A framework for building perception pipelines. arXiv preprint arXiv:1906.08172.
+- Trujillo, J. P., Vaitonyte, J., Simanova, I., & Özyürek, A. (2019). Toward the markerless and automatic analysis of kinematic features: A toolkit for gesture and movement research. Behavior research methods, 51(2), 769-777.
+- Pouw, W., & Dixon, J. A. (2020). Gesture networks: Introducing dynamic time warping and network analysis for the kinematic study of gesture ensembles. Discourse Processes, 57(4), 301-319.
 :::
 
 ---
 
 # Resources
-
 - **Package**: [PyPI - envisionhgdetector](https://pypi.org/project/envisionhgdetector/)
 - **Source Code**: [GitHub Repository](https://github.com/WimPouw/envisionBOX_modulesWP)
 - **Documentation**: [EnvisionBox](https://envisionbox.org/)
-- **Preprint**: [OSF Preprint](https://osf.io/psg5f)
+- **Paper**: [EnvisionHGDetector Postprint](https://www.wimpouw.com/files/gh_detectorPREPRINT.pdf)
 
 ::: {.callout-note}
 ## Feedback & Contributions
