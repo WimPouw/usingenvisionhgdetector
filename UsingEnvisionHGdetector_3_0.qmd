@@ -7,8 +7,9 @@ author:
     affiliation: Department of Computational Cognitive Science, Tilburg University, Netherlands
     email: w.pouw@tilburguniversity.edu 
   - name: Sharjeel Shaikh
-  - name: Bosco Yung
+  - name: Fabian Eckert
   - name: James Trujillo
+  - name: Bosco Yung
   - name: Antonio Rueda-Toicen
   - name: Gerard de Melo
   - name: Babajide Owoyele
